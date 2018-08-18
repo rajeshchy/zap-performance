@@ -39,7 +39,7 @@
             </elementProp>
             <elementProp name="userPassword" elementType="Argument">
               <stringProp name="Argument.name">userPassword</stringProp>
-              <stringProp name="Argument.value">password</stringProp>
+              <stringProp name="Argument.value">cGFzc3dvcmQ=</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="baseUrl" elementType="Argument">
@@ -92,11 +92,19 @@
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">password</stringProp>
               </elementProp>
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="platform" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.value">${platform}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">platform</stringProp>
+              </elementProp>
+              <elementProp name="device_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${device_id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">device_id</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>

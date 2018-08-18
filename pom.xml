@@ -14,10 +14,11 @@
             <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
-                <version>1.4.1</version>
+                <version>2.7.0</version>
 
                 <configuration>
                     <testResultsTimestamp>false</testResultsTimestamp>
+                    <suppressJMeterOutput> false </suppressJMeterOutput >
                 </configuration>
                 <executions>
                     <execution>
@@ -27,6 +28,13 @@
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
+
+                    <!--<execution>-->
+                        <!--<id>jmeter-check-results</id>-->
+                        <!--<goals>-->
+                            <!--<goal>results</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
                 </executions>
             </plugin>
         </plugins>
