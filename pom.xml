@@ -9,6 +9,21 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <!--<properties>-->
+    <!--<threadcount>threadcount</threadcount>-->
+    <!--<rampUp>rampUp</rampUp>-->
+    <!--<loop>loop</loop>-->
+    <!--</properties>-->
+
+
+    <properties>
+        <threads>2</threads>
+        <testIterations>3</testIterations>
+        <threadcount>5</threadcount>
+        <loop>2</loop>
+        <ramptime>2</ramptime>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -16,10 +31,32 @@
                 <artifactId>jmeter-maven-plugin</artifactId>
                 <version>2.7.0</version>
 
+                <!--<configuration>-->
+                <!--<testResultsTimestamp>true</testResultsTimestamp>-->
+                <!--<suppressJMeterOutput> false </suppressJMeterOutput >-->
+                <!--</configuration>-->
+                <!--<configuration>-->
+                    <!--<propertiesUser>-->
+                        <!--<threadcount>${threadcount}</threadcount>-->
+                        <!--<rampUp>${rampUp}</rampUp>-->
+                        <!--<loop>${loop}</loop>-->
+                    <!--</propertiesUser>-->
+                <!--</configuration>-->
+
+
+
+
                 <configuration>
+                    <generateReports>false</generateReports>
                     <testResultsTimestamp>false</testResultsTimestamp>
-                    <suppressJMeterOutput> false </suppressJMeterOutput >
+                    <resultsFileFormat>xml</resultsFileFormat>
+                    <propertiesUser>
+                        <threadcount>${threadcount}</threadcount>
+                        <loop>${loop}</loop>
+                        <ramptime>${ramptime}</ramptime>
+                    </propertiesUser>
                 </configuration>
+
                 <executions>
                     <execution>
                         <id>jmeter-tests</id>
@@ -27,18 +64,22 @@
                         <goals>
                             <goal>jmeter</goal>
                         </goals>
+
+
+                        <!--<configuration>-->
+                            <!---->
+                            <!--<propertiesUser>-->
+                                <!--<threadcount>${threadcount}</threadcount>-->
+                                <!--<rampUp>${rampUp}</rampUp>-->
+                                <!--<loop>${loop}</loop>-->
+                            <!--</propertiesUser>-->
+                        <!--</configuration>-->
+
                     </execution>
 
-                    <!--<execution>-->
-                        <!--<id>jmeter-check-results</id>-->
-                        <!--<goals>-->
-                            <!--<goal>results</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
                 </executions>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
