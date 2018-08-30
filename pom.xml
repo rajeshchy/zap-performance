@@ -3,10 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.zoomcar</groupId>
     <artifactId>zap</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <threads>2</threads>
+        <testIterations>3</testIterations>
+        <threadcount>5</threadcount>
+        <loop>2</loop>
+        <ramptime>2</ramptime>
+    </properties>
 
 
     <build>
@@ -17,9 +24,16 @@
                 <version>2.7.0</version>
 
                 <configuration>
-                    <testResultsTimestamp>false</testResultsTimestamp>
-                    <suppressJMeterOutput> false </suppressJMeterOutput >
+                    <generateReports>true</generateReports>
+                    <testResultsTimestamp>true</testResultsTimestamp>
+                    <resultsFileFormat>xml</resultsFileFormat>
+                    <propertiesUser>
+                        <threadcount>${threadcount}</threadcount>
+                        <loop>${loop}</loop>
+                        <ramptime>${ramptime}</ramptime>
+                    </propertiesUser>
                 </configuration>
+
                 <executions>
                     <execution>
                         <id>jmeter-tests</id>
@@ -28,17 +42,10 @@
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
-
-                    <!--<execution>-->
-                        <!--<id>jmeter-check-results</id>-->
-                        <!--<goals>-->
-                            <!--<goal>results</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
                 </executions>
+
             </plugin>
         </plugins>
     </build>
-
 
 </project>
