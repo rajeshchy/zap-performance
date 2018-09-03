@@ -127,9 +127,16 @@
         <hashTree/>
         <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
           <stringProp name="JSONPostProcessor.referenceNames">authToken</stringProp>
-          <stringProp name="JSONPostProcessor.jsonPathExprs">$</stringProp>
+          <stringProp name="JSONPostProcessor.jsonPathExprs">$.user.auth_token</stringProp>
           <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
         </JSONPostProcessor>
+        <hashTree/>
+        <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion(Set auth token globally)" enabled="true">
+          <stringProp name="BeanShellAssertion.query"></stringProp>
+          <stringProp name="BeanShellAssertion.filename"></stringProp>
+          <stringProp name="BeanShellAssertion.parameters"></stringProp>
+          <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+        </BeanShellAssertion>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Config data" enabled="true">
