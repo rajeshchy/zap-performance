@@ -15,7 +15,6 @@
         <ramptime>2</ramptime>
     </properties>
 
-
     <build>
         <plugins>
             <plugin>
@@ -48,4 +47,17 @@
         </plugins>
     </build>
 
+
+
+<profiles>
+
+<profile>
+    <id> test-a</id>
+
+    <properties>
+        <env>TestA</env>
+    </properties>
+
+</profile>
+</profiles>
 </project>
