@@ -107,12 +107,6 @@ System.out.println(props.get(&quot;token&quot;));
 //System.out.println(temp)</stringProp>
         </BeanShellPostProcessor>
         <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
-        <hashTree/>
       </hashTree>
       <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -143,11 +137,6 @@ System.out.println(props.get(&quot;token&quot;));
           <elementProp name="u_platform" elementType="Argument">
             <stringProp name="Argument.name">u_platform</stringProp>
             <stringProp name="Argument.value">web</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="u_token" elementType="Argument">
-            <stringProp name="Argument.name">u_token</stringProp>
-            <stringProp name="Argument.value"></stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
